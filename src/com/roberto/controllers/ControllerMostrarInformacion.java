@@ -7,20 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.roberto.entidades.Loguin;
-import com.roberto.negocio.clsLoguin;
+import com.google.gson.Gson;
 
 /**
- * Servlet implementation class ControllerAcceso
+ * Servlet implementation class ControllerMostrarInformacion
  */
-@WebServlet("/ControllerAcceso")
-public class ControllerAcceso extends HttpServlet {
+@WebServlet("/ControllerMostrarInformacion")
+public class ControllerMostrarInformacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ControllerAcceso() {
+    public ControllerMostrarInformacion() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,28 +37,12 @@ public class ControllerAcceso extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		 //doGet(request, response);
+		Gson json = new Gson();
 		
-		String user= request.getParameter("user");
-		String pass = request.getParameter("pass");
+		ClsUsuario clsUser = new ClsUsuario();
 		
-		Loguin log = new Loguin();
-		clsLoguin clsL = new clsLoguin();
-		
-		log.setUser(user);
-		log.setPass(pass);
-		
-		int valordeacceso = clsL.acceso(log);
-		
-		if(valordeacceso==1) 
-		{
-			System.out.println("WeLCOME");
-			response.sendRedirect("Saludo.jsp");
-		}else {
-			
-			System.out.println("ERROR");
-			response.sendRedirect("Error.jsp");
-		}
+		response.getWriter().append(json.toJson(clsUser.ListadoUSUARIOS()));
 	}
 
 }
