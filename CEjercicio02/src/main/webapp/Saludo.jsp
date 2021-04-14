@@ -24,8 +24,9 @@
 						<td>${item.idUsuario}</td>
 						<td>${item.Usuario}</td>
 						<td>${item.Pass}</td>
-						<td><a href="ControllerMostrarInformacion?usu=${item.idUsuario}" class="btn btn-danger">ELIMINAR</a></td>
-						<td><a href="" class="btn btn-warning">Editar</a></td>
+						<td><a href="ControllerMostrarInformacion?IdUsuario=${item.idUsuario}&Eliminar=btne" class="btn btn-danger">ELIMINAR</a>
+						<a href="add.jsp?Id=${item.idUsuario}&Usuario=${item.Usuario}&Pass=${item.Pass}" class="btn btn-warning">ACTUALIZAR</a>
+						</td> 
 					</tr>
 					`
 						console.log(item.Pass);
@@ -35,12 +36,13 @@
 		</script>
 		<h1>WELCOME</h1>
 
+	
+	<br>
 		<table class="table table-dark table-striped" id="tablaDatos">
 			<thead>
 				<th>IdUsuario</th>
 				<th>USUARIO</th>
 				<th>PASSWORD</th>
-				<th>ELIMINACION</th>
 				<th>ACCIONES</th>
 			</thead>
 		</table>

@@ -17,7 +17,7 @@
 <input type="text" name="pass" placeholder="Escribe tu password">
 <br>
 <input type="submit">
-</form>
+</form> 
 
 </body>
 </html>
