@@ -62,4 +62,20 @@ public class ClsUsuario {
 		}
 
 	}
+	
+	
+	public void AgregarUsuario(usuario user) {
+		try {
+			CallableStatement consulta = con.prepareCall("SP_U_USUARIO(?,?,?)");
+			consulta.setString("PUsuario", user.getUsuario());
+			consulta.setString("PPass", user.getPass());
+			consulta.setInt("PTipoUsuario", user.getIdUsuario());
+			consulta.executeQuery();
+			System.out.println("Exito");
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+	}	
 }

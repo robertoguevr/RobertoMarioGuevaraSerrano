@@ -24,7 +24,7 @@ if(Id==null){
 
 <form action="ControllerMostrarInformacion" method="get">
 
-<input type="hidden" value=<%=Id %> name="IdUsuario">
+<input type="hidden" name="IdUsuario" value=<%=Id%>>
 
 <label>Usuario</label>
 <input type="text" value="<%=Usuario %>" name= "usuario">

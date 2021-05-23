@@ -46,12 +46,12 @@ public class ControllerMostrarInformacion extends HttpServlet {
 			if(Evaluar.equals("btne")) {
 				
 				
-				usu.setIdUsuario(Integer.parseInt(request.getParameter("usu")));
+				usu.setIdUsuario(Integer.parseInt(Idusuario));
 				clsusu.Eliminar(usu);
 				response.sendRedirect("Saludo.jsp");	
 			}
 			
-		}
+		}else if (agregando.equals("btna") );
 		
 		
 	}
